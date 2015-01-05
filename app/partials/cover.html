@@ -1,7 +1,7 @@
 <style>
 .cover {
-	padding: 200px 0px ;
-	margin: 0px;
+	padding: 10px 0px ;
+	margin: 70px 0px;
 
 	text-align: center;
 }
@@ -25,8 +25,8 @@
 
 @media (max-width: 768px) {
 	.cover {
-		padding: 40px 0px;
-		margin: 0px;
+		padding: 10px 0px ;
+		margin: 70px 0px;
 
 		text-align: center;
 	}
@@ -39,6 +39,29 @@
 		width: 90%;
 		font-size: 1.2em;
 		margin-top: 10px;
+	}
+
+	.cover a {
+		font-size: 1em;
+		line-height: 2em;
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+}
+
+.video {
+	text-align: center;
+}
+
+.video iframe {
+	width: 750px;
+	height: 422px;
+}
+
+@media (max-width: 768px) {
+	.video iframe {
+		width: 500px;
+		height: 281px;
 	}
 }
 
@@ -66,6 +89,10 @@
 	margin-bottom: 30px;
 }
 
+.my-buttons a {
+	margin: 10px;
+}
+
 #license img {
 	margin: 0px 40px;
 	max-width: 130px;
@@ -81,12 +108,25 @@
 
 </style>
 
-<div class="jumbotron cover">
-	<h1>Des supers cours ...</h1>
-	<p>
-		... pour les stagiaires d'Orsys qui suivent le cours sur AngularJS.
-	</p>
-	<a class="btn btn-success" ng-href="{{url('/cours')}}">Voir les cours</a>
+<div class="container">
+	<div class="jumbotron cover">
+		<h1>Notre métier : recycler la chaleur des serveurs informatiques en eau chaude sanitaire.</h1>
+		<div class="my-buttons row">
+			<div class="col-md-6">
+				<a class="btn btn-success" ng-href="{{url('/cours')}}">Je veux un serveur écologique !</a>
+			</div>
+			<div class="col-md-6">
+				<a class="btn btn-success" ng-href="{{url('/cours')}}">Je veux de l'eau chaude gratuite !</a>
+			</div>
+
+			</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="video">
+		<iframe src="//player.vimeo.com/video/112564337" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="http://vimeo.com/112564337">Salle serveur écoresponsable</a> from <a href="http://vimeo.com/user34701345">Stimergy</a> on <a href="https://vimeo.com">Vimeo</a>.</p> <p>Syst&egrave;me de recyclage de chaleur issue des serveurs au sein de l&#039;Universit&eacute; Jean Moulin Lyon 3</p>
+	</div>
 </div>
 
 <div id="products" class="container text-center cover-block first-block">
