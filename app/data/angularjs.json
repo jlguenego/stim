@@ -1,0 +1,23 @@
+{
+	"title": "AngularJS",
+	"path": "angularjs",
+	"img": "angularjs.png",
+	"content": [
+		{
+			"title": "Introduction",
+			"path": "chapter0"
+		},
+		{
+			"title": "Chapter 1",
+			"path": "chapter1"
+		},
+		{
+			"title": "Chapter 2",
+			"path": "chapter2"
+		},
+		{
+			"title": "Chapter 12",
+			"path": "chapter12"
+		}
+	]
+}

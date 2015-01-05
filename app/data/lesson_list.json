@@ -1,0 +1,24 @@
+{
+	"title": "Cours",
+	"path": "cours",
+	"content": [
+		{
+			"title": "JavaScript",
+			"path": "javascript",
+			"file": "javascript.json",
+			"img": "js.png"
+		},
+		{
+			"title": "AngularJS",
+			"path": "angularjs",
+			"file": "angularjs.json",
+			"img": "angularjs.png"
+		},
+		{
+			"title": "Java EE",
+			"path": "java_ee",
+			"file": "java_ee.json",
+			"img": "java_ee.png"
+		}
+	]
+}

@@ -1,0 +1,16 @@
+logs/*
+!.gitkeep
+node_modules/
+tmp/
+.idea
+.DS_Store
+angular-phonecat-snapshots
+bower_components
+*.min.js
+*.min.map
+*.log
+/app/seo_snapshots
+app/sitemap.xml
+Edit.*
+app/sitemap.json
+app/.htaccess

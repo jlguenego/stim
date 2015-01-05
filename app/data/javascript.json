@@ -1,0 +1,40 @@
+{
+	"title": "JavaScript",
+	"path": "javascript",
+	"img": "js.png",
+	"content": [
+		{
+			"title": "Hello World",
+			"path": "00_hello_world",
+			"type": "md"
+		},
+		{
+			"title": "Les variables",
+			"path": "01_variables"
+		},
+		{
+			"title": "Les expressions",
+			"path": "02_expressions"
+		},
+		{
+			"title": "Structures de contrôle",
+			"path": "03_control_statement"
+		},
+		{
+			"title": "Les fonctions",
+			"path": "04_functions"
+		},
+		{
+			"title": "Les Objets",
+			"path": "05_objects"
+		},
+		{
+			"title": "Mots clef",
+			"path": "06_keywords"
+		},
+		{
+			"title": "API",
+			"path": "07_api"
+		}
+	]
+}

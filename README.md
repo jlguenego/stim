@@ -1,4 +1,4 @@
-Stimergy
-========
+cours_angular
+=============
 
-site web pour Stimergy
+site web pour donner le cours d'angular
