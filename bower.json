@@ -1,0 +1,14 @@
+{
+  "name": "cours_angular",
+  "description": "",
+  "version": "0.0.0",
+  "homepage": "",
+  "license": "",
+  "private": true,
+  "dependencies": {
+    "angular": "1.2.x",
+    "angular-resource": "~1.2.x",
+    "jquery": "1.10.2",
+    "bootstrap": "~3.2.x"
+  }
+}
