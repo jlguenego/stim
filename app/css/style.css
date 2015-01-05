@@ -4,10 +4,13 @@ html {
 	min-width: 310px;
 }
 
+body {
+	font-family: 'dinpro', Arial, sans-serif;
+}
+
 /* HEADER */
 .header_breadcrumb {
 	width: 100%;
-
 	border-bottom: 1px solid #DDDDDD;
 }
 
@@ -25,10 +28,49 @@ html {
 .my-header.navbar, .my-header.header_breadcrumb {
 	border-radius: 0px;
 	margin: 0px;
+	background-color: hsla(240, 100%, 15%, 1);
 }
 
 .header_breadcrumb .breadcrumb {
 	margin: 0px;
+	border-radius: 0px;
+}
+
+.navbar-fixed-top {
+	border-width: 1px 0 1px;
+}
+
+.navbar-brand {
+	padding: 0px 15px;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+	text-transform: uppercase;
+	font-weight: bold;
+	text-align: center;
+	font-size: 14px;
+	background-color: hsla(240, 35%, 70%, 1);
+}
+
+.navbar-inverse .navbar-nav > li > a {
+	text-transform: uppercase;
+	font-weight: bold;
+	text-align: center;
+	font-size: 14px;
+	color: hsla(240, 29%, 95%, 1);
+}
+
+.dropdown-menu {
+	text-transform: uppercase;
+	border-radius: 0px;
+	border: 3px solid hsla(240, 35%, 70%, 1);
+	box-shadow: none;
+	webkit-box-shadow: none;
+}
+
+.dropdown-menu .divider {
+height: 3px;
+background-color: hsla(240, 35%, 70%, 1);
 }
 
 /* MAIN CONTAINER */
