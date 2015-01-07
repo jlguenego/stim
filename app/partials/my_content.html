@@ -1,18 +1,10 @@
 <div class="my-content">
 
-	<my-button-nav></my-button-nav>
-
 	<div class="my-content-body">
-		<md-include src="chapterPath" autoscroll="goToAnchor()" parser="markdownParser"
+		<md-include src="mdPath" autoscroll="goToAnchor()" parser="markdownParser"
 			script="bower_components/google-code-prettify/bin/run_prettify.min.js?"></md-include>
-		<!--<my-include src="chapterPath"></my-include>-->
 
 	</div>
-
-	<my-button-nav></my-button-nav>
-
-	<comments ng-show="config.showComment"></comments>
-	<disqus-comments ng-show="config.showDisqusComment"></disqus-comments>
 
 </div>
 <script>
@@ -66,7 +58,6 @@
 
 	function manageUrl(str) {
 		var result = str.replace(/href="#(.*?)"/g, 'href="javascript:void(0)" ng-click="goToAnchor(\'$1\')"');
-		//var result = str.replace(/href="#(.*?)"/g, 'href="{{url(location.path() + \'#$1\')}}"');
 		return result;
 	}
 

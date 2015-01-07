@@ -113,62 +113,52 @@
 		}
 	]);
 
-	app.controller('ChapterListController', ['$scope', '$rootScope', '$http', '$routeParams', 'LessonService',
-		function($scope, $rootScope, $http, $routeParams, LessonService) {
-			$scope.lesson_desc = LessonService.get({ name: $routeParams.lesson }, function(lesson_desc) {
-				$scope.update_hash(lesson_desc);
+	app.controller('ListController', ['$scope', '$rootScope', '$location', '$routeParams', 'JsonFileService',
+		function($scope, $rootScope, $location, $routeParams, JsonFileService) {
+			var key = $location.path().split("/")[1];
+			$scope.json_file = JsonFileService.get({ name: key }, function(json_file) {
+				console.log("start");
+				console.log("json_file", json_file);
+				$scope.update_hash(json_file);
 
-				$rootScope.title = cours_angular_config.siteName + ' - ' + $scope.lesson_desc.title;
+				$rootScope.title = cours_angular_config.siteName + ' - ' + $scope.json_file.title;
 			}, function(error) {
+				console.log('error', error);
 				$scope.pageNotFound = true;
 			});
-
-			$rootScope.current_lesson = $scope.lesson_desc;
 		}
 	]);
 
-	app.controller('ChapterController', ['$scope', '$rootScope', '$http', '$routeParams', 'LessonService',
-		function($scope, $rootScope, $http, $routeParams, LessonService) {
+	app.controller('ItemController', ['$scope', '$rootScope', '$location', '$routeParams', 'JsonFileService',
+		function($scope, $rootScope, $location, $routeParams, JsonFileService) {
+			console.log("ItemController");
 			$scope.chapter = {};
 			$scope.chapterPath = '';
 
-			$scope.update_nav_button = function(lesson_desc) {
-				var content_path = lesson_desc.content.map(function(x) {return x.path;});
-				var parent_breadcrumb = $scope.breadcrumb.slice(0);
+			var path = $location.path();
+			var array = path.split('/');
+			array.shift();
+			console.log("path", path);
+			console.log("array", array);
+			var key = array[0];
+			var name = array[1];
+			console.log("key", key);
+			console.log("name", name);
 
-				var current = parent_breadcrumb.pop();
-				var index = content_path.indexOf(current);
+			$scope.json_file = JsonFileService.get({ name: key }, function(json_file) {
+				$scope.update_hash(json_file);
+				console.log("json_file", json_file);
+				$scope.currentItem = json_file.content.find(function(element, index, array) {
+					return (element.path == name);
+				});
+				//TODO : manage when the item is not found.
 
-				$scope.currentChapter = lesson_desc.content[index];
-
-				$scope.chapter_previous = undefined;
-				if (index > 0) {
-					var tmp = parent_breadcrumb.slice(0);
-					tmp.push(content_path[index - 1]);
-					$scope.chapter_previous = '/' + tmp.join('/');
-				}
-
-				$scope.chapter_next = undefined;
-				if (index < content_path.length - 1) {
-					var tmp = parent_breadcrumb.slice(0);
-					tmp.push(content_path[index + 1]);
-					$scope.chapter_next = '/' + tmp.join('/');
-				}
-			};
-
-			$scope.lesson_desc = LessonService.get({ name: $routeParams.lesson }, function(lesson_desc) {
-				$scope.update_hash(lesson_desc);
-				$scope.update_nav_button(lesson_desc);
-
-				var type = $scope.currentChapter.type || 'md';
-				$scope.chapterPath = 'data/' + $routeParams.lesson + '/' + $routeParams.chapter + '.' + type;
+				$scope.mdPath = 'data/' + $scope.currentItem.file;
 
 				$rootScope.title = cours_angular_config.siteName + ' - '
-					+ $scope.lesson_desc.title + ' : '
-					+ $scope.currentChapter.title;
+					+ $scope.json_file.title + ' : '
+					+ $scope.currentItem.title;
 			});
-
-			$rootScope.current_lesson = $scope.lesson_desc;
 		}
 	]);
 })();

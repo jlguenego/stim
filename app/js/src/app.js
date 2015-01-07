@@ -24,10 +24,13 @@ if (typeof String.prototype.startsWith != 'function') {
 
 	app.controller('MyAppController',
 		['$scope', '$rootScope', '$http', '$location', '$anchorScroll', '$timeout',
-		'LessonService',
-	function($scope, $rootScope, $http, $location, $anchorScroll, $timeout, LessonService) {
+		'JsonFileService',
+	function($scope, $rootScope, $http, $location, $anchorScroll, $timeout, JsonFileService) {
+
+		$scope.service_list = JsonFileService.query({ name: "service_list" });
+		$scope.information_list = JsonFileService.query({ name: "information_list" });
+
 		$scope.lesson_desc = {};
-		$scope.lesson_list = LessonService.query();
 		$scope.chapter_previous = undefined;
 		$scope.chapter_next = undefined;
 		$scope.breadcrumb = undefined;
@@ -119,6 +122,14 @@ if (typeof String.prototype.startsWith != 'function') {
 			.when('/sitemap', {
 				templateUrl: 'partials/sitemap.html',
 				controller: 'SitemapController'
+			})
+			.when('/products', {
+				templateUrl: 'partials/layout_list.html',
+				controller: 'ListController'
+			})
+			.when('/products/:name', {
+				templateUrl: 'partials/layout_item.html',
+				controller: 'ItemController'
 			})
 			.when('/cours', {
 				templateUrl: 'partials/lesson_list.html'

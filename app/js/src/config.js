@@ -10,7 +10,7 @@ var cours_angular_config = {
 
 	fixedHeader: true,
 
-	siteName: 'JLG Consulting',
+	siteName: 'Stimergy',
 
 	css: {
 		headerNavbarHeight: 51

@@ -15,17 +15,17 @@
 
 <div class="my-sidebar hidden-xs">
 	<h1>
-		<a ng-href="{{url('/' + lesson_list.path + '/' + lesson_desc.path)}}" ng-click="scrollTop()">
-			{{lesson_desc.title}}
+		<a ng-href="{{url('/' + json_file.path)}}" ng-click="scrollTop()">
+			{{json_file.title}}
 		</a>
 	</h1>
 	<ul class="nav nav-sidebar">
-		<li ng-repeat="chapter in lesson_desc.content"
-			ng-class="{active: currentChapter.path == chapter.path}">
+		<li ng-repeat="item in json_file.content"
+			ng-class="{active: currentItem.path == item.path}">
 
-			<a ng-href="{{url('/' + lesson_list.path + '/' + lesson_desc.path + '/' + chapter.path)}}"
+			<a ng-href="{{url('/' + json_file.path + '/' + item.path)}}"
 				ng-click="scrollTop()">
-				{{chapter.title}}
+				{{item.title}}
 			</a>
 		</li>
 	</ul>

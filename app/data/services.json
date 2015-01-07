@@ -1,0 +1,18 @@
+{
+	"title": "Services",
+	"path": "services",
+	"content": [
+		{
+			"title": "Diagnostic de chaufferie",
+			"path": "diagnostic_chaufferie"
+		},
+		{
+			"title": "Installation de chaufferie",
+			"path": "installation_chaufferie"
+		},
+		{
+			"title": "Location de serveurs",
+			"path": "location_serveurs"
+		}
+	]
+}

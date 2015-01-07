@@ -1,0 +1,12 @@
+{
+	"title": "Produits",
+	"path": "products",
+	"content": [
+		{
+			"title": "Cuve C2014",
+			"path": "cuve_c2014",
+			"img": "products/cuve_c2014.png",
+			"file": "products/cuve_c2014.md"
+		}
+	]
+}

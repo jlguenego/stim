@@ -24,39 +24,43 @@
 					<li ng-class="{active: location.path() == '/'}">
 						<a ng-href="{{url('/')}}">Accueil</a>
 					</li>
-					<li class="dropdown" ng-class="{active: location.path().startsWith('/cours')}">
+					<li class="dropdown" ng-class="{active: location.path().startsWith('/products')}">
 						<a class="dropdown-toogle" data-toggle="dropdown" href="javascrip:void(0)">
-							Cours <span class="caret"></span>
+							Produits <span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a ng-href="{{url('/cours')}}">Liste des cours</a>
+								<a ng-href="{{url('/products')}}">Tous les produits</a>
 							</li>
 							<li class="divider"></li>
-							<li ng-repeat="lesson in lesson_list.content" on-finish-render="fix-menu"
-								 ng-class="{active: location.path().startsWith('/cours/' + lesson.path)}">
-								<a ng-href="{{url('/cours/' + lesson.path)}}">{{lesson.title}}</a>
+							<li>
+								<a ng-href="{{url('/products/cuve_2014')}}">Cuve C2014</a>
 							</li>
 						</ul>
 					</li>
-
-					<li class="dropdown" ng-show="location.path().startsWith('/cours/')"
-						ng-class="{'visible-xs': location.path().startsWith('/cours/')}">
+					<li class="dropdown" ng-class="{active: location.path().startsWith('/services')}">
 						<a class="dropdown-toogle" data-toggle="dropdown" href="javascrip:void(0)">
-							{{current_lesson.title}} <span class="caret"></span>
+							Services <span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a ng-href="{{url('/cours/' + current_lesson.path)}}">
-									Liste des chapitres
-								</a>
+								<a ng-href="{{url('/services')}}">Tous les services</a>
 							</li>
 							<li class="divider"></li>
-							<li ng-repeat="chapter in current_lesson.content" on-finish-render="fix-menu"
-								ng-class="{active: location.path().startsWith('/cours/' + current_lesson.path + '/' + chapter.path)}">
-								<a ng-href="{{url('/cours/' + current_lesson.path + '/' + chapter.path)}}">
-									{{chapter.title}}
-								</a>
+							<li ng-repeat="service in service_list.content" on-finish-render="fix-menu"
+								 ng-class="{active: location.path().startsWith('/service/' + service.path)}">
+								<a ng-href="{{url('/services/' + service.path)}}">{{service.title}}</a>
+							</li>
+						</ul>
+					</li>
+					<li class="dropdown" ng-class="{active: location.path().startsWith('/information')}">
+						<a class="dropdown-toogle" data-toggle="dropdown" href="javascrip:void(0)">
+							Informations <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li ng-repeat="information in information_list.content" on-finish-render="fix-menu"
+								 ng-class="{active: location.path().startsWith('/information/' + information.path)}">
+								<a ng-href="{{url('/information/' + information.path)}}">{{information.title}}</a>
 							</li>
 						</ul>
 					</li>
@@ -66,19 +70,13 @@
 							À propos <span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
-							<li><a href="javascript:void(0)" ng-click="goTo('/', 'products')">Produits</a></li>
-							<li><a href="javascript:void(0)" ng-click="goTo('/', 'license')">Licence</a></li>
-							<li><a href="javascript:void(0)" ng-click="goTo('/', 'contacts')">Contact</a></li>
+							<li><a href="javascript:void(0)" ng-click="goTo('/', 'partners')">Partenaires</a></li>
+							<li><a href="javascript:void(0)" ng-click="goTo('/', 'contacts')">Contacts</a></li>
 							<li><a ng-href="{{url('/sitemap')}}">Plan du site</a></li>
 						</ul>
 					</li>
 				</ul>
-				<!--
-				<form class="navbar-form navbar-right">
-					<input type="text" class="form-control" placeholder="Search..." />
-				</form>
-				-->
-			</div><!--/.nav-collapse -->
+			</div>
 		</div>
 	</div>
 

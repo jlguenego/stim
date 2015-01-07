@@ -27,13 +27,13 @@
 </style>
 
 <div class="container-fluid">
-	<h1>Liste des cours</h1>
+	<h1>{{json_file.title}}</h1>
 	<div class="text-center">
-		<a ng-repeat="lesson in lesson_list.content"
-			ng-href="{{url('/' + lesson_list.path + '/' + lesson.path)}}">
+		<a ng-repeat="item in json_file.content"
+			ng-href="{{url('/' + json_file.path + '/' + item.path)}}">
 			<div class="lesson-title">
-					<img ng-src="{{'img/' + lesson.img}}" class="lesson-logo" alt="{{lesson.title}}" />
-					<h2>{{lesson.title}}</h2>
+					<img ng-src="{{'img/' + item.img}}" class="lesson-logo" alt="{{item.title}}" />
+					<h2>{{item.title}}</h2>
 			</div>
 		</a>
 	</div>
