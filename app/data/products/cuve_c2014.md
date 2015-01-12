@@ -2,7 +2,7 @@ Cuve de chaudière numérique Stimergy modèle C2014
 ==================================================
 
 
-![Superbe photo de la cuve](img/products/montage-chadiere.jpg)
+![Superbe photo de la cuve](img/products/montage-chaudiere.jpg)
 
 Montage d'une Cuve dans une chaufferie. ([Merci à l'université Lyon 3 Jean Moulin](http://www.univ-lyon3.fr/fr/actualites/la-chaudiere-numerique-lyon-3-les-premieres-photos-de-l-installation-886637.kjsp)).
 
