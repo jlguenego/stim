@@ -42,6 +42,7 @@
 		]
 	});
 	function markdownParser(str) {
+		console.log("markdownParser");
 		var html = markdownConverter.makeHtml(str);
 		html = manageUrl(html);
 
