@@ -4,15 +4,21 @@
 	"content": [
 		{
 			"title": "Diagnostic de chaufferie",
-			"path": "diagnostic_chaufferie"
+			"path": "diagnostic_chaufferie",
+			"img": "services/diagnostic_chaufferie.jpg",
+			"file": "services/diagnostic_chaufferie.md"
 		},
 		{
 			"title": "Installation de chaufferie",
-			"path": "installation_chaufferie"
+			"path": "installation_chaufferie",
+			"img": "services/installation.png",
+			"file": "services/installation.md"
 		},
 		{
 			"title": "Location de serveurs",
-			"path": "location_serveurs"
+			"path": "location_serveurs",
+			"img": "services/location.png",
+			"file": "services/location.md"
 		}
 	]
 }

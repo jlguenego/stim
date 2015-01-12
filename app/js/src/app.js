@@ -27,8 +27,11 @@ if (typeof String.prototype.startsWith != 'function') {
 		'JsonFileService',
 	function($scope, $rootScope, $http, $location, $anchorScroll, $timeout, JsonFileService) {
 
-		$scope.service_list = JsonFileService.query({ name: "service_list" });
-		$scope.information_list = JsonFileService.query({ name: "information_list" });
+		$scope.list = {
+			"products": JsonFileService.query({ name: "products" }),
+			"services": JsonFileService.query({ name: "services" }),
+			"informations": JsonFileService.query({ name: "informations" })
+		};
 
 		$scope.lesson_desc = {};
 		$scope.chapter_previous = undefined;
@@ -131,16 +134,21 @@ if (typeof String.prototype.startsWith != 'function') {
 				templateUrl: 'partials/layout_item.html',
 				controller: 'ItemController'
 			})
-			.when('/cours', {
-				templateUrl: 'partials/lesson_list.html'
+			.when('/services', {
+				templateUrl: 'partials/layout_list.html',
+				controller: 'ListController'
 			})
-			.when('/cours/:lesson', {
-				templateUrl: 'partials/chapter_list.html',
-				controller: 'ChapterListController'
+			.when('/services/:name', {
+				templateUrl: 'partials/layout_item.html',
+				controller: 'ItemController'
 			})
-			.when('/cours/:lesson/:chapter', {
-				templateUrl: 'partials/lesson_content.html',
-				controller: 'ChapterController'
+			.when('/informations', {
+				templateUrl: 'partials/layout_list.html',
+				controller: 'ListController'
+			})
+			.when('/informations/:name', {
+				templateUrl: 'partials/layout_item.html',
+				controller: 'ItemController'
 			})
 			.otherwise({
 				redirectTo: '/'

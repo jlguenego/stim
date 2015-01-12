@@ -24,6 +24,7 @@
 					<li ng-class="{active: location.path() == '/'}">
 						<a ng-href="{{url('/')}}">Accueil</a>
 					</li>
+
 					<li class="dropdown" ng-class="{active: location.path().startsWith('/products')}">
 						<a class="dropdown-toogle" data-toggle="dropdown" href="javascrip:void(0)">
 							Produits <span class="caret"></span>
@@ -33,8 +34,9 @@
 								<a ng-href="{{url('/products')}}">Tous les produits</a>
 							</li>
 							<li class="divider"></li>
-							<li>
-								<a ng-href="{{url('/products/cuve_2014')}}">Cuve C2014</a>
+							<li ng-repeat="item in list.products.content" on-finish-render="fix-menu"
+								 ng-class="{active: location.path().startsWith('/products/' + item.path)}">
+								<a ng-href="{{url('/products/' + item.path)}}">{{item.title}}</a>
 							</li>
 						</ul>
 					</li>
@@ -47,20 +49,20 @@
 								<a ng-href="{{url('/services')}}">Tous les services</a>
 							</li>
 							<li class="divider"></li>
-							<li ng-repeat="service in service_list.content" on-finish-render="fix-menu"
+							<li ng-repeat="service in list.services.content" on-finish-render="fix-menu"
 								 ng-class="{active: location.path().startsWith('/service/' + service.path)}">
 								<a ng-href="{{url('/services/' + service.path)}}">{{service.title}}</a>
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown" ng-class="{active: location.path().startsWith('/information')}">
+					<li class="dropdown" ng-class="{active: location.path().startsWith('/informations')}">
 						<a class="dropdown-toogle" data-toggle="dropdown" href="javascrip:void(0)">
 							Informations <span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
-							<li ng-repeat="information in information_list.content" on-finish-render="fix-menu"
-								 ng-class="{active: location.path().startsWith('/information/' + information.path)}">
-								<a ng-href="{{url('/information/' + information.path)}}">{{information.title}}</a>
+							<li ng-repeat="information in list.informations.content" on-finish-render="fix-menu"
+								 ng-class="{active: location.path().startsWith('/informations/' + information.path)}">
+								<a ng-href="{{url('/informations/' + information.path)}}">{{information.title}}</a>
 							</li>
 						</ul>
 					</li>

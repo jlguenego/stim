@@ -132,13 +132,9 @@
 	app.controller('ItemController', ['$scope', '$rootScope', '$location', '$routeParams', 'JsonFileService',
 		function($scope, $rootScope, $location, $routeParams, JsonFileService) {
 			console.log("ItemController");
-			$scope.chapter = {};
-			$scope.chapterPath = '';
 
-			var path = $location.path();
-			var array = path.split('/');
+			var array = $location.path().split('/');
 			array.shift();
-			console.log("path", path);
 			console.log("array", array);
 			var key = array[0];
 			var name = array[1];
@@ -152,6 +148,9 @@
 					return (element.path == name);
 				});
 				//TODO : manage when the item is not found.
+				if (!$scope.currentItem) {
+					console.log("no item found");
+				}
 
 				$scope.mdPath = 'data/' + $scope.currentItem.file;
 
