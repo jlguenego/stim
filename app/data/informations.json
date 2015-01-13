@@ -5,13 +5,13 @@
 		{
 			"title": "Presse",
 			"path": "presse",
-			"img": "informations/presse.png",
+			"img": "informations/presse.jpg",
 			"file": "informations/presse.md"
 		},
 		{
 			"title": "Clients",
 			"path": "clients",
-			"img": "informations/clients.png",
+			"img": "informations/happy_clients.jpg",
 			"file": "informations/clients.md"
 		},
 		{

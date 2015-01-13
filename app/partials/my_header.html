@@ -60,6 +60,10 @@
 							Informations <span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
+							<li>
+								<a ng-href="{{url('/services')}}">Toutes les informations</a>
+							</li>
+							<li class="divider"></li>
 							<li ng-repeat="information in list.informations.content" on-finish-render="fix-menu"
 								 ng-class="{active: location.path().startsWith('/informations/' + information.path)}">
 								<a ng-href="{{url('/informations/' + information.path)}}">{{information.title}}</a>
