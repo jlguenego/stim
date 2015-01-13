@@ -11,13 +11,13 @@
 		{
 			"title": "Installation de chaufferie",
 			"path": "installation_chaufferie",
-			"img": "services/installation.png",
+			"img": "services/installation.jpg",
 			"file": "services/installation.md"
 		},
 		{
 			"title": "Location de serveurs",
 			"path": "location_serveurs",
-			"img": "services/location.png",
+			"img": "services/location.jpg",
 			"file": "services/location.md"
 		}
 	]

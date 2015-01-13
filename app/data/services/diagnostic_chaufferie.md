@@ -2,7 +2,7 @@ Etude de diagnostic de chaufferie
 =================================
 
 
-![Superbe photo de la cuve](img/services/diagnostic_chaufferie.jpg)
+![Diagnostic de chaufferie](img/services/diagnostic_chaufferie.jpg)
 
 Examen des caractéristiques d'une chaufferie existante.
 
