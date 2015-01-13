@@ -10,7 +10,7 @@ var fs = require('fs');
 var seoDir = __dirname + '/../app/seo_snapshots/';
 var seoFile = seoDir + '/sitemap.txt';
 var dataPath = __dirname + '/../app/data';
-var topJson = require(dataPath + '/lesson_list.json');
+var array = [ "products", "services", "informations" ];
 var sitemapJsonFile = __dirname + '/../app/sitemap.json'
 var sitemapJson = {};
 
@@ -25,13 +25,19 @@ function main() {
 	writeJson('', {path: '', title: 'Home', file: true}, sitemapJson);
 
 	var homeJsonChildren = sitemapJson['Home'].children;
-	// Write "cours" page
-	writeUrl(topJson.path);
-	writeJson('', topJson, sitemapJson['Home'].children);
 
-	topJson.content.forEach(function(item) {
-		handleItem(topJson.path, item, homeJsonChildren[topJson.title].children);
-	});
+	for (var i = 0; i < array.length; i++) {
+		var topJson = require(dataPath + '/' + array[i] + '.json');
+
+		// Write "cours" page
+		writeUrl(topJson.path);
+		writeJson('', topJson, sitemapJson['Home'].children);
+
+		topJson.content.forEach(function(item) {
+			handleItem(topJson.path, item, homeJsonChildren[topJson.title].children);
+		});
+
+	}
 
 	console.log('Writing JSON file...');
 	fs.writeFileSync(sitemapJsonFile, JSON.stringify(sitemapJson, null, '\t'));
@@ -67,13 +73,6 @@ function writeJson(prefix, item, json) {
 function handleItem(prefix, item, parentJson) {
 	writeUrl(prefix + '/' + item.path)
 	writeJson(prefix, item, parentJson);
-
-	if (item.file) {
-		var json = require(dataPath + '/' + item.file);
-		json.content.forEach(function(subitem) {
-			handleItem(prefix + '/' + json.path, subitem, parentJson[item.title].children);
-		});
-	}
 }
 
 main();

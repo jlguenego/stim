@@ -1,7 +1,7 @@
 {
-	"baseUrlExtraction": "http://localhost:8000/app/",
+	"baseUrlExtraction": "http://localhost/stim/app/",
 	"baseUrlDestination": "http://ocpforum.com/stimergy/",
-	"seoSnapshotDir": "C:/wamp/www/cours_angular/app/seo_snapshots",
+	"seoSnapshotDir": "C:/wamp/www/stim/app/seo_snapshots",
 	"cacheTime": 600000,
 	"profile": "dev",
 	"profiles": {
