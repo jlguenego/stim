@@ -22,16 +22,15 @@ function main() {
 
 	// Write index.html
 	writeUrl('');
-	writeJson('', {path: '', title: 'Home', file: true}, sitemapJson);
+	writeJson('', {path: '', title: 'Accueil', file: true}, sitemapJson);
 
-	var homeJsonChildren = sitemapJson['Home'].children;
+	var homeJsonChildren = sitemapJson['Accueil'].children;
 
 	for (var i = 0; i < array.length; i++) {
 		var topJson = require(dataPath + '/' + array[i] + '.json');
 
-		// Write "cours" page
 		writeUrl(topJson.path);
-		writeJson('', topJson, sitemapJson['Home'].children);
+		writeJson('', topJson, sitemapJson['Accueil'].children);
 
 		topJson.content.forEach(function(item) {
 			handleItem(topJson.path, item, homeJsonChildren[topJson.title].children);

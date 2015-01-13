@@ -61,7 +61,7 @@ if (!Array.prototype.find) {
 		$scope.chapter_previous = undefined;
 		$scope.chapter_next = undefined;
 		$scope.breadcrumb = undefined;
-		$scope.hash = { 'cours': 'Cours' };
+		$scope.hash = { 'sitemap': 'Plan du site' };
 		$scope.location = $location;
 		$scope.now = new Date();
 		$scope.window = window;
